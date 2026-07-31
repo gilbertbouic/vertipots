@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Vertipots</title>
+  <meta name="description" content="Contact Louis Wilken — louis@vertipots.co.za, +27 76 234 5870, Pretoria." />
+  <meta name="theme-color" content="#1a4731" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://lh3.googleusercontent.com/d/1DZScTeq738SzCjM6GnQV4yjEhW0QoQDa" />
+  <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1Fpg70h58G7IR3aqpNTIILnFj_d8KbdO2" />
+  <meta property="og:title" content="Contact | Vertipots" />
+  <meta property="og:description" content="Contact Louis Wilken — louis@vertipots.co.za, +27 76 234 5870, Pretoria." />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/12fwaFke154cr3oArjgsKKJRzK5lZ_it3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-link">
+      <img src="https://lh3.googleusercontent.com/d/1B0hm2n2NRj8c-ZlRAwCv6EmstDOjzSRE" onerror="this.src='assets/logo.svg'" alt="Vertipots" />
+      <span>Vertipots</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="system.html">System</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn btn-primary">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact</h1>
+    <p>Quotes, visits and technical enquiries.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div>
+      <div class="contact-detail">
+        <strong>Email</strong>
+        <a href="mailto:louis@vertipots.co.za">louis@vertipots.co.za</a>
+      </div>
+      <div class="contact-detail">
+        <strong>Telephone / WhatsApp</strong>
+        <a href="tel:+27762345870">+27 76 234 5870</a><br />
+        <a href="https://wa.me/27762345870" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="contact-detail">
+        <strong>Address</strong>
+        <span>275 Soutpansberg Road<br />Rietondale, Pretoria 0084<br />South Africa</span>
+      </div>
+    </div>
+    <div class="form-card">
+      <form id="enquiry-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telephone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send by email</button>
+        <p class="form-note">Opens your email client addressed to louis@vertipots.co.za.</p>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const status = document.getElementById('form-status');
+  if (!name || !email || !message) {
+    status.textContent = 'Please complete the required fields.';
+    status.className = 'form-status error';
+    return;
+  }
+  const subject = encodeURIComponent('Vertipots enquiry — ' + name);
+  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || '—') + '\n\n' + message);
+  status.textContent = 'Opening email…';
+  status.className = 'form-status ok';
+  window.location.href = 'mailto:louis@vertipots.co.za?subject=' + subject + '&body=' + body;
+});
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://lh3.googleusercontent.com/d/1B0hm2n2NRj8c-ZlRAwCv6EmstDOjzSRE" alt="" />
+          Vertipots
+        </div>
+        <p>Patented vertical growing system by Louis Wilken. Pretoria, South Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="system.html">System</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:louis@vertipots.co.za">louis@vertipots.co.za</a>
+        <a href="tel:+27762345870">+27 76 234 5870</a>
+        <a href="https://wa.me/27762345870" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vertipots. All rights reserved.</span>
+      <span>Patented technology</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => document.getElementById('nav').classList.remove('open')));
+</script>
+</body>
+</html>
