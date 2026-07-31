@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gilbertbouic.github.io/vertipots/sitemap.txt
